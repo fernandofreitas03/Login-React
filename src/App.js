@@ -30,6 +30,12 @@ function App() {
     ]);
   }
 
+  function deleteUsers(userId){
+    const newUsers = users.filter(user => user.id !== userId )
+    setUsers(newUsers)
+
+  }
+
   return (
     <Container>
       <Image alt="avatar" src={People} />
@@ -44,14 +50,14 @@ function App() {
 
         <Button onClick={addNewUser}>
           Cadastrar
-          <img alt="seta" src={Arrow} />
+          <img alt="seta" src={Arrow}/>
         </Button>
 
         <ul>
           {users.map((user) => (
             <Users key={user.id}>
               <p>{user.name}</p> <p>{user.age}</p>
-              <button>
+              <button onClick={() => deleteUsers(user.id)}>
                 <img src={Trash} />
               </button>
             </Users>
