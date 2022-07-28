@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import axios from "axios";
 import People from "./assets/avatar1.svg";
 import Arrow from "./assets/arrow.svg";
 import Trash from "./assets/trash.svg";
@@ -19,21 +20,19 @@ function App() {
   const inputName = useRef();
   const inputAge = useRef();
 
-  function addNewUser() {
-    setUsers([
-      ...users,
-      {
-        id: Math.random(),
-        name: inputName.current.value ,
-        age: inputAge.current.value ,
-      },
-    ]);
+  async function addNewUser() {
+    const { data: newUser } = await axios.post("http://localhost:3001/users", {
+      name: inputName.current.value,
+      age: inputAge.current.value,
+    });
+    console.log(newUser);
+
+    setUsers([...users, newUser]);
   }
 
-  function deleteUsers(userId){
-    const newUsers = users.filter(user => user.id !== userId )
-    setUsers(newUsers)
-
+  function deleteUsers(userId) {
+    const newUsers = users.filter((user) => user.id !== userId);
+    setUsers(newUsers);
   }
 
   return (
@@ -50,7 +49,7 @@ function App() {
 
         <Button onClick={addNewUser}>
           Cadastrar
-          <img alt="seta" src={Arrow}/>
+          <img alt="seta" src={Arrow} />
         </Button>
 
         <ul>
