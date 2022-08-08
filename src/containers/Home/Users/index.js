@@ -1,8 +1,8 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
-import People from "./assets/avatar1.svg";
-import Arrow from "./assets/arrow.svg";
-import Trash from "./assets/trash.svg";
+import PeopleTwo from "../../assets/avatar2.svg";
+import Arrow from "../../assets/arrow.svg";
+import Trash from "../../assets/trash.svg";
 
 import {
   H1,
@@ -12,32 +12,46 @@ import {
   Div,
   Button,
   Image,
-  Users,
+  User,
 } from "./styles";
 
-function App() {
+
+function  App() {
   const [users, setUsers] = useState([]);
   const inputName = useRef();
   const inputAge = useRef();
 
-  async function addNewUser() {
+  useEffect(() => {
+    
+    async function fetchUsers(){
+     const { data: newUsers } = await axios.get("http://localhost:3001/users");
+    
+     setUsers(newUsers)
+    }
+    
+     fetchUsers()
+ },[]);
+  
+  
+  async function addNewUser(){
     const { data: newUser } = await axios.post("http://localhost:3001/users", {
-      name: inputName.current.value,
-      age: inputAge.current.value,
-    });
-    console.log(newUser);
-
-    setUsers([...users, newUser]);
-  }
-
-  function deleteUsers(userId) {
-    const newUsers = users.filter((user) => user.id !== userId);
+       name: inputName.current.value,
+       age: inputAge.current.value
+      });
+     
+     setUsers([...users, newUser])
+    }  
+  
+  async function deleteUsers(userId) {
+    await axios.delete(`http://localhost:3001/users/${userId}`)
+    
+    const newUsers =  users.filter((user) => user.id !== userId);
     setUsers(newUsers);
   }
 
   return (
     <Container>
-      <Image alt="avatar" src={People} />
+      <Image alt="avatar" src={PeopleTwo} />
       <Div>
         <H1>Olá</H1>
 
@@ -54,12 +68,12 @@ function App() {
 
         <ul>
           {users.map((user) => (
-            <Users key={user.id}>
+            <User key={user.id}>
               <p>{user.name}</p> <p>{user.age}</p>
               <button onClick={() => deleteUsers(user.id)}>
-                <img src={Trash} />
+                <img src={Trash} alt='lata-lixo'/>
               </button>
-            </Users>
+            </User>
           ))}
         </ul>
       </Div>

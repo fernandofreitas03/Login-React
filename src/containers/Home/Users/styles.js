@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import Background2 from "./assets/background2.svg";
+import Background1 from "../../assets/background1.svg";
 
 export const Container = styled.div`
-  background: url("${Background2}");
+  background: url("${Background1}");
   background-size: cover;
 
   display: flex;
@@ -108,7 +108,7 @@ export const Button = styled.button`
   }
 `;
 
-export const Users = styled.li`
+export const User = styled.li`
   display: flex;
   justify-content: space-around;
   align-items: center;
