@@ -1,5 +1,6 @@
 import React, { useState, useRef} from "react";
 import axios from "axios";
+
 import People from "../../assets/avatar1.svg";
 import Arrow from "../../assets/arrow.svg";
 
@@ -43,7 +44,7 @@ function  App() {
         <InputLabel>Idade</InputLabel>
         <Input ref={inputAge} placeholder="Idade" type="number" />
 
-        <Button onClick={addNewUser}>
+        <Button to="/usuarios" onClick={addNewUser}>
           Cadastrar
           <img alt="seta" src={Arrow} />
         </Button>
