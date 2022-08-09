@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import Background1 from "../../assets/background1.svg";
 
 export const Container = styled.div`
@@ -16,8 +15,8 @@ export const Image = styled.img`
 `;
 
 export const Div = styled.div`
-  width: 414px;
-  height: 845px;
+   height: 100%;
+   min-height: calc(100vh - 170px);
 
   background: linear-gradient(
     157.44deg,
@@ -46,7 +45,7 @@ export const H1 = styled.h1`
 
 
 
-export const Button = styled(Link)`
+export const Button = styled.button`
   width: 342px;
   height: 74px;
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import PeopleTwo from "../../assets/avatar2.svg";
 import Arrow from "../../assets/arrow.svg";
@@ -16,7 +17,7 @@ import {
 
 function  Users() {
   const [users, setUsers] = useState([]);
-
+  const history = useHistory()
 
   useEffect(() => {
     
@@ -29,7 +30,9 @@ function  Users() {
      fetchUsers()
  },[]);
   
-  
+  function goBack(){
+    history.push("/")
+  }
 
   
   async function deleteUsers(userId) {
@@ -55,7 +58,7 @@ function  Users() {
           ))}
         </ul>
 
-        <Button to="/" >
+        <Button onClick={goBack} >
         <img alt="seta" src={Arrow} /> Voltar
         </Button>
       </Div>
