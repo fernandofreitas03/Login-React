@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Div = styled.div`
   width: 414px;
   height: 845px;
@@ -17,9 +16,8 @@ export const Div = styled.div`
   display: flex;
   flex-direction: column;
 
- ${props => props.IsBlur && `
+  ${(props) => props.IsBlur && `
  backdrop-filter: blur(45px); 
  min-height: calc(100vh - 170px);
 `}
-
 `;

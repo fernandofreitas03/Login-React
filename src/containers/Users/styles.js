@@ -4,7 +4,6 @@ import Background1 from "../../assets/background1.svg";
 export const Container = styled.div`
   background: url("${Background1}");
   background-size: cover;
-backdrop-filter: blur(45px);
   display: flex;
   flex-direction: column;
   align-items: center;
