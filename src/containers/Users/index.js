@@ -5,11 +5,12 @@ import PeopleTwo from "../../assets/avatar2.svg";
 import Arrow from "../../assets/arrow.svg";
 import Trash from "../../assets/trash.svg";
 
+import  H1  from "../../components/Title";
+import  Div  from "../../components/ContainerItens";
+import Button  from "../../components/Button";
+
 import {
-  H1,
   Container,
-  Div,
-  Button,
   Image,
   User,
 } from "./styles";
@@ -45,7 +46,7 @@ function  Users() {
   return (
     <Container>
       <Image alt="avatar" src={PeopleTwo} />
-      <Div>
+      <Div IsBlur={true}>
         <H1>Usuários</H1>
         <ul>
           {users.map((user) => (
@@ -58,7 +59,7 @@ function  Users() {
           ))}
         </ul>
 
-        <Button onClick={goBack} >
+        <Button IsBack={true} onClick={goBack} >
         <img alt="seta" src={Arrow} /> Voltar
         </Button>
       </Div>

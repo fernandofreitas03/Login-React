@@ -4,15 +4,15 @@ import { useHistory } from "react-router-dom";
 import People from "../../assets/avatar1.svg";
 import Arrow from "../../assets/arrow.svg";
 
+import  H1 from "../../components/Title";
+import  Div  from "../../components/ContainerItens";
+import  Button  from "../../components/Button";
 
 import {
-  H1,
   Container,
   InputLabel,
   Input,
-  Div,
-  Button,
-  Image,
+  Image
 } from "./styles";
 
 
@@ -32,25 +32,27 @@ function  App() {
      setUsers([...users, newUser])
 
      history.push("/usuarios")
-    }  
+    }
+    
   
-  return (
+      return (
     <Container>
       <Image alt="avatar" src={People} />
       <Div>
+        
         <H1>Olá</H1>
 
         <InputLabel>Nome</InputLabel>
-        <Input ref={inputName} placeholder="Nome" type="text" />
+        <Input ref={inputName} placeholder="Nome" type="text" required/>
 
         <InputLabel>Idade</InputLabel>
-        <Input ref={inputAge} placeholder="Idade" type="number" />
+        <Input ref={inputAge} placeholder="Idade" type="number" required/>
 
-        <Button to="/usuarios" onClick={addNewUser}>
+        <Button type="submit" to="/usuarios" onClick={addNewUser}>
           Cadastrar
           <img alt="seta" src={Arrow} />
         </Button>
-      </Div>
+       </Div>
     </Container>
   );
 }
