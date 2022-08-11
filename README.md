@@ -1,13 +1,16 @@
-#Site  responsivo
+# Tela-Login React
  
 
-<img src="./assets/site.png" width="300px" height="190px" alt="imagem site"> <img src="./assets/responsivo.png" width="92px" alt= "imagem responsiva">
+<img src="./assets/tela1.png" width="300px" height="190px" alt="imagem site"> <img src="./assets/tela2.png"  width="92px" alt= "imagem responsiva">
 
 > Resultado do projeto!
-###  Linguagens usadas no Projeto:
+###  Tecnologias utilizadas no Projeto:
 
-- [x] HTML
-- [x] CSS
+- [x] JavaScript              - [x] Axios
+- [x] React                   - [x] Hooks 
+- [x] Styled-Components       - [x] Router-dom
+- [x] Yarn
+
 
 
 
