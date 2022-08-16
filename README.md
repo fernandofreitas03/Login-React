@@ -6,10 +6,18 @@
 > Resultado do projeto!
 ###  Tecnologias utilizadas no Projeto:
 
+<<<<<<< HEAD
 - [x] JavaScript              
 - [x] React                    
 - [x] Styled-Components       
 - [x] Yarn
+=======
+- [x] JavaScript
+- [x] React               
+- [x] Styled-Components
+- [x] Yarn
+- [x] Axios
+>>>>>>> fb7d96a9fa8b0eba44516b3ca9be67bf1d2364bd
 - [x] Hooks 
 - [x] Router-dom
 
