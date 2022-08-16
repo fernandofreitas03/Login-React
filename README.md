@@ -6,7 +6,6 @@
 > Resultado do projeto!
 ###  Tecnologias utilizadas no Projeto:
 
-<<<<<<< HEAD
 - [x] JavaScript              
 - [x] React                    
 - [x] Styled-Components       
@@ -15,9 +14,6 @@
 - [x] Axios
 - [x] Hooks 
 - [x] Router-dom
-
-
-
 
 
 ##  Desenvolvido por:
