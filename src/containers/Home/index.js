@@ -1,6 +1,6 @@
 import React, { useState, useRef} from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import People from "../../assets/avatar1.svg";
 import Arrow from "../../assets/arrow.svg";
 
@@ -20,7 +20,7 @@ function  App() {
   const [users, setUsers] = useState([]);
   const inputName = useRef();
   const inputAge = useRef();
-  const history = useHistory()
+  const navigate = useNavigate()
  
   
   async function addNewUser(){
@@ -31,7 +31,7 @@ function  App() {
      
      setUsers([...users, newUser])
 
-     history.push("/usuarios")
+     navigate("/usuarios")
     }
     
   

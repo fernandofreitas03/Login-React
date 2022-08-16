@@ -1,22 +1,15 @@
 # Tela-Login React
  
 
-<img src="./img/tela1.png" width="300px" height="190px" alt="imagem site"> <img src="./img/tela2.png"  width="92px" alt= "imagem responsiva">
+<img src="./img/tela1.png" width="92px" alt="imagem site"> <img src="./img/tela2.png"  width="92px" alt= "imagem responsiva">
 
 > Resultado do projeto!
 ###  Tecnologias utilizadas no Projeto:
 
 - [x] JavaScript              
-<<<<<<< HEAD
 - [x] React                    
 - [x] Styled-Components       
 - [x] Yarn
-=======
-- [x] React                  
-- [x] Styled-Components       
-- [x] Yarn
-- [x] Axios 
->>>>>>> 36812cbb3bbd20738cce18bd0490d999c1076e0b
 - [x] Hooks 
 - [x] Router-dom
 
